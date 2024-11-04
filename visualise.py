@@ -13,9 +13,9 @@ dfs = [pd.read_excel(sheet, names=columns) for sheet in sheets]  # Use the same 
 df = pd.concat(dfs, ignore_index=True)
 print(df.tail())
 # Data Cleaning
-df.drop_duplicates(inplace=True)
+#df.drop_duplicates(inplace=True)
 df.dropna(inplace=True)
-
+print(df['sentiment'].value_counts())
 from sklearn.utils import resample
 positive = df[df['sentiment'] == 'positive']
 negative = df[df['sentiment'] == 'negative']
